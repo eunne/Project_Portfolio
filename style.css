@@ -1,0 +1,62 @@
+:root {
+  /* font size */
+  --font-large: 18px;
+  --font-medium: 16px;
+  --font-small: 14px;
+  --font-exSmall: 12px;
+
+  /* size */
+  --size-width: 30px;
+  --size-height: 30px;
+
+  /* padding */
+  --padding: 12px;
+
+  /* color */
+  --color-pink: #f3cbc9;
+  --color-mint: #8cc5d0;
+  --color-white: white;
+  --color-gray: #c4c4c4;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* main page */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.navbar__home {
+  width: var(--size-width);
+  height: var(--size-height);
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar__menu__progress {
+  padding: var(--padding);
+}
+
+.main {
+  position: relative;
+}
+
+.main__Box {
+  background-color: var(--color-mint);
+  position: absolute;
+}
+
+.text__title {
+  font-size: var(--font-large);
+}
+
+.text__sub {
+  font-size: var(--font-medium);
+}
