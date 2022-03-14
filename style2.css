@@ -1,0 +1,6 @@
+.navbar__logo img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  /* default: 아래쪽 모서리가 텍스크 기준선이 됨. 따라서 다른 텍스트와 수직라인을 맞추기 위해 조건을 바꿔줘야함. */
+}
