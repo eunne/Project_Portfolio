@@ -43,13 +43,13 @@
   <!-- 무조건 div, span을 사용하는게 아니라 요소에 맞는 tag 사용 -->
   <section id="home">
     <img class="home__avatar" src="imgs/eunne.jpeg" alt="Eunne's profile photo"></img>
-    <h1 class="home__title">I'm Dream maker</h1>
+    <h1 class="home__title">I'm a Dream maker</h1>
     <h3 class="home__description">Frontend developer and Designer</h3>
     <button class="home__contact">contact me</button>
   </section>
 
   <!-- about me -->
-  <section id="about">
+  <section id="about" class="section">
     <!-- page 공통적으로 쓰이는 것은 재사용가능하도록 -->
     <h1>About me</h1>
     <p>
@@ -58,41 +58,44 @@
       asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
       otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
     </p>
-      <div class="about__majors">
-        <!-- 또 다른 블럭이 생겼으니 about__majors__major가 아니고 major라는 별개의 박스로 만듦-->
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-html5"></i>
-          </div>
-          <div class="major__title">HTML</div>
-          <div class="major__description"></div>
+    <div class="about__majors">
+      <!-- 또 다른 블럭이 생겼으니 about__majors__major가 아니고 major라는 별개의 박스로 만듦-->
+      <div class="major">
+        <div class="major__icon">
+          <i class="fa-brands fa-html5"></i>
         </div>
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-css3-alt"></i>
-          </div>
-          <div class="major__title">CSS</div>
-          <div class="major__description"></div>
+        <h2 class="major__title">HTML</h2>
+        <div class="major__description"></div>
+      </div>
+      <div class="major">
+        <div class="major__icon">
+          <i class="fa-brands fa-css3-alt"></i>
         </div>
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-js-square"></i>
-          </div>
-          <div class="major__title">JavaScript</div>
-          <div class="major__description"></div>
+        <h2 class="major__title">CSS</h2>
+        <div class="major__description"></div>
+      </div>
+      <div class="major">
+        <div class="major__icon">
+          <i class="fa-brands fa-js-square"></i>
+        </div>
+        <h2 class="major__title">JavaScript</h2>
+        <div class="major__description"></div>
+      </div>
+    </div>
+    <div class="about__jobs">
+      <div class="job">
+        <img src="imgs/favicon.png" alt="Hanall Biopharma" class="job__logo">
+        <div class="job__info">
+          <span class="job__title">Finance Team</span>
+          <span class="job__period">2018.07 ~ now</span>
+        <div class="job__description">xcepturi deleniti dolorem maiores at natus repudiandae</div>
         </div>
       </div>
-      <div class="about__jobs">
-        <img class="job">
-          <img src="" alt="Hanall Biopharma" class="job__logo"></img>
-          <p class="job__title">Finance Team</p>
-          <p class="job_period">2018.07 ~ now</p>
-        </div>
-      </div>
+    </div>
   </section>
 
   <!-- skills -->
-  <section id="skills">
+  <section id="skills" class="section">
     <h1>Skills</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
@@ -148,7 +151,7 @@
   </section>
 
   <!-- my work -->
-  <section id="work">
+  <section id="work" class="section">
     <h1>My works</h1>
     <h3>projects</h3>
     <div class="work__categories">
@@ -197,7 +200,7 @@
   </section>
 
   <!-- testimonials -->
-  <sction id="testimonials">
+  <sction id="testimonials" class="section">
     <h1>Testimonials</h1>
     <h3>See what they say about me</h3>
     <div class="testimonials">
@@ -219,7 +222,7 @@
   </sction>
 
   <!-- contact -->
-  <section id="contacts">
+  <section id="contacts" class="section">
     <h1>Let's talk</h1>
     <h2>
       <div class="contacts">

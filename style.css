@@ -19,11 +19,15 @@
 
   /* font weight */
   --weight-bold: 700;
-  --wight-semi-bold: 600;
-  --wight-regular: 400;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
 
   /* size */
   --size-border-raidus: 6px;
+
+  /* animation */
+  --animation-duration: 300ms;
+  /* 사용자가 답답함을 느끼지 않으며 재미를 느낄정도의 시간 250ms ~ 350ms */
 }
 
 /* universial tag */
@@ -43,21 +47,21 @@ h1 {
 
 h2 {
   font-size: var(--font-medium);
-  font-weight: var(--wight-semi-bold);
+  font-weight: var(--weight-semi-bold);
   color: var(--color-dark-gray);
   margin: 8px 0px;
 }
 
 h3 {
   font-size: var(--font-regular);
-  font-weight: var(--wight-regular);
+  font-weight: var(--weight-regular);
   color: var(--color-dark-gray);
   margin: 8px 0px;
 }
 
 p {
   font-size: var(--font-regular);
-  font-weight: var(--wight-regular);
+  font-weight: var(--weight-regular);
   color: var(--color-dark-gray);
   margin: 4px 0px;
 }
@@ -85,6 +89,14 @@ button {
   outline: none;
 }
 
+/* section common */
+.section {
+  text-align: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* navbar */
 #navbar {
   display: flex;
@@ -96,7 +108,7 @@ button {
 
 .navbar__logo {
   font-size: var(--font-medium);
-  font-weight: var(--wight-semi-bold);
+  font-weight: var(--weight-semi-bold);
   margin: auto 0;
 }
 
@@ -130,22 +142,22 @@ button {
 
 /* home */
 #home {
-  background: url('imgs/navbar.png') center/cover no-repeat;
+  background: url('imgs/background/backgroud-bottom.png') center/cover no-repeat;
   padding: 40px;
   text-align: center;
   color: var(--color-dark-gray);
 }
 
 .home__avatar {
-  width: 400px;
-  height: 400px;
+  width: 420px;
+  height: 420px;
   border-radius: 90%;
   border: 1px solid var(--color-dark-white);
 }
 
 .home__contact {
   font-size: var(--font-medium);
-  font-weight: var(--wight-regular);
+  font-weight: var(--weight-regular);
   padding: 8px;
   margin: 16px;
   text-decoration: none;
@@ -157,4 +169,70 @@ button {
 
 .home__contact:hover {
   background-color: var(--color-pink);
+}
+
+/* about me */
+
+.about__majors {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--color-dark-gray);
+  margin: 50px;
+}
+
+.major {
+  text-align: center;
+}
+
+.major__icon {
+  font-size: 80px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  border-radius: 90%;
+  background-color: var(--color-mint);
+  text-align: center;
+  color: var(--color-light-white);
+}
+
+/* icon에 마우스가 올라오면 i에게 아래 효과를 적용시켜줘 */
+.major__icon:hover i {
+  color: var(--color-pink);
+  transform: rotate(-30deg) scale(1.2, 1.2);
+}
+
+/* hover 안에 애니메이션을 넣으면 포인터가 빠질 때 애니메이션이 없음. */
+.major__icon i {
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.major__title {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  margin-top: 12px;
+}
+
+.job {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  padding: 50px;
+  margin: 0 100px;
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.job__logo {
+  width: 300px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.job__info {
+  margin: 0 16px;
+  text-align: left;
+}
+
+#skills {
+  background: center/cover no-repeat
+    url('imgs/background/background-gradation-top.png');
 }
