@@ -38,7 +38,7 @@ h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: var(--color-dark-gray);
-  margin: 16px 0px;
+  margin: 14px 0px;
 }
 
 h2 {
@@ -75,6 +75,14 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--color-dark-gray);
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 /* navbar */
@@ -82,6 +90,8 @@ a {
   display: flex;
   justify-content: space-between;
   padding: var(--padding-regular);
+  color: var(--color-dark-gray);
+  background-color: var(--color-pink);
 }
 
 .navbar__logo {
@@ -107,13 +117,44 @@ a {
   padding: 8px 14px;
   margin: 0px 8px;
   cursor: pointer; /*메뉴에 커서가 올라가면 손가락으로 바뀌도록*/
-  border-radius: var(--size-border-raidus);
 }
 
 .navbar__menu__item.active {
-  border: 2px solid var(--color-pink);
+  border-bottom: 2px solid var(--color-dark-gray);
 }
 
 .navbar__menu__item:hover {
+  background-color: var(--color-mint);
+  border-radius: 0 var(--size-border-raidus);
+}
+
+/* home */
+#home {
+  background: url('imgs/navbar.png') center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+  color: var(--color-dark-gray);
+}
+
+.home__avatar {
+  width: 400px;
+  height: 400px;
+  border-radius: 90%;
+  border: 1px solid var(--color-dark-white);
+}
+
+.home__contact {
+  font-size: var(--font-medium);
+  font-weight: var(--wight-regular);
+  padding: 8px;
+  margin: 16px;
+  text-decoration: none;
+  color: var(--color-dark-gray);
+  border: 2px solid var(--color-dark-gray);
+  border-radius: var(--size-border-raidus);
+  text-align: center;
+}
+
+.home__contact:hover {
   background-color: var(--color-pink);
 }
