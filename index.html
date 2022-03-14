@@ -12,11 +12,231 @@
   <meta name="author" content="Eunne"/>
   <link rel="icon" type= "image.png" href="imgs/favicon.png"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-  
-</body>
-</html>
+  <!-- 1. 전체적인 섹션을 나눈다 -->
+
+  <!-- navbar -->
+  <nav id="navbar">
+    <div class="navbar__logo">
+      <img src="imgs/favicon.png" alt="logo">
+      <a href="#">Eunne</a>
+      <!-- 이름을 누르면 홈으로 오도록 a tag 사용 -->
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__menu__item active">Home</li>
+      <li class="navbar__menu__item">Intro</li>
+      <li class="navbar__menu__item">Skills</li>
+      <li class="navbar__menu__item">My Work</li>
+      <li class="navbar__menu__item">Testimonial</li>
+      <li class="navbar__menu__item">Contact</li>
+    </ul>
+  </nav>
+
+  <!-- home -->
+  <!-- 무조건 div, span을 사용하는게 아니라 요소에 맞는 tag 사용 -->
+  <section id="home">
+    <img class="home__avatar" src="imgs/eunne.jpeg" alt="Eunne's profile photo"></img>
+    <h1 class="home__title">I'm Dream maker</h1>
+    <h2 class="home__description">Frontend developer and Designer</h2>
+    <button class="home__contact">contact me</button>
+  </section>
+
+  <!-- about me -->
+  <section id="about">
+    <!-- page 공통적으로 쓰이는 것은 재사용가능하도록 -->
+    <h1>About me</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
+      Excepturi deleniti dolorem maiores at natus repudiandae<br/>
+      asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
+      otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
+    </p>
+      <div class="about__majors">
+        <!-- 또 다른 블럭이 생겼으니 about__majors__major가 아니고 major라는 별개의 박스로 만듦-->
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="major__title">HTML</div>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <div class="major__title">CSS</div>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-js-square"></i>
+          </div>
+          <div class="major__title">JavaScript</div>
+          <div class="major__description"></div>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <img class="job">
+          <img src="" alt="Hanall Biopharma" class="job__logo"></img>
+          <p class="job__title">Finance Team</p>
+          <p class="job_period">2018.07 ~ now</p>
+        </div>
+      </div>
+  </section>
+
+  <!-- skills -->
+  <section id="skills">
+    <h1>Skills</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
+      Excepturi deleniti dolorem maiores at natus repudiandae<br/>
+      asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
+      otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
+    </p>
+    <div class="skillset__top">
+      <h2>skills</h2>
+      <div class="skill">
+        <div class="skill__description">
+          <span>HTML</span>
+          <span>99%</span>
+        </div>
+        <div class="skill__bar">
+          <div class="skill__value"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill__description">
+          <span>CSS</span>
+          <span>99%</span>
+        </div>
+        <div class="skill__bar">
+          <div class="skill__value"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill__description">
+          <span>JavaScript</span>
+          <span>90%</span>
+        </div>
+        <div class="skill__bar">
+          <div class="skill__value"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <div class="skill__description">
+          <span>React</span>
+          <span>80%</span>
+        </div>
+        <div class="skill__bar">
+          <div class="skill__value"></div>
+        </div>
+      </div>
+    </div>
+    <div class="skillset__bottom">
+      <h2>Tools</h2>
+      <ul class="tools">
+        <li>Figma</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- my work -->
+  <section id="work">
+    <h1>My works</h1>
+    <h3>projects</h3>
+    <div class="work__categories">
+      <button class="category__btn">All<span class="category__count">5</span></button>
+      <button class="category__btn">Javascript<span class="category__count">3</span></button>
+      <button class="category__btn">React<span class="category__count">2</span></button>
+    </div>
+    <div class="work__projects">
+      <a href="#" class="project" target="blank">
+        <img class="project__img" src="imgs/projects/project1.png" alt="youtube">
+        <div class="project__description">
+          <h3>Youtuve</h3>
+          <span>Clone coding with HTML and CSS</span>
+        </div>
+      </a>
+      <a href="#" class="project" target="blank">
+        <img class="project__img" src="imgs/projects/project2.png" alt="youtube">
+        <div class="project__description">
+          <h3>Youtuve</h3>
+          <span>Clone coding with HTML and CSS</span>
+        </div>
+      </a>
+      <a href="#" class="project" target="blank">
+        <img class="project__img" src="imgs/projects/project3.png" alt="youtube">
+        <div class="project__description">
+          <h3>Youtuve</h3>
+          <span>Clone coding with HTML and CSS</span>
+        </div>
+      </a>
+      <a href="#" class="project" target="blank">
+        <img class="project__img" src="imgs/projects/project4.png" alt="youtube">
+        <div class="project__description">
+          <h3>Youtuve</h3>
+          <span>Clone coding with HTML and CSS</span>
+        </div>
+      </a>
+      <a href="#" class="project" target="blank">
+        <img class="project__img" src="imgs/projects/project5.png" alt="youtube">
+        <div class="project__description">
+          <h3>Youtuve</h3>
+          <span>Clone coding with HTML and CSS</span>
+        </div>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- testimonials -->
+  <sction id="testimonials">
+    <h1>Testimonials</h1>
+    <h3>See what they say about me</h3>
+    <div class="testimonials">
+      <div class="testimonial">
+        <img class="testimonial__avatar" src="imgs/testimonials/people1-200515-154332.jpeg" alt="testimonial avatar">
+        <span class="testimonial__decription">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis odit quisquam at, quaerat itaque provident modi eius. Labore tenetur nihil eius ipsum veritatis ut consectetur cum minus odit. Dolore, impedit.</p>
+          <p class="name"><a href="#">Eunne</a> / CFO of company </p>
+        </span>
+      </div>
+      <div class="testimonial">
+        <img class="testimonial__avatar" src="imgs/testimonials/people1-200515-154332.jpeg" alt="testimonial avatar">
+        <span class="testimonial__decription">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis odit quisquam at, quaerat itaque provident modi eius. Labore tenetur nihil eius ipsum veritatis ut consectetur cum minus odit. Dolore, impedit.</p>
+          <p class="name"><a href="#">Eunne</a> / CFO of company </p>
+        </span>
+      </div>
+    </div>
+  </sction>
+
+  <!-- contact -->
+  <section id="contacts">
+    <h1>Let's talk</h1>
+    <h2>
+      <div class="contacts">
+        <div class="contact">
+          <a href="soneh67@gmail.com">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="soneh67@gmail.com">soneh67@gmail.com</a>
+      </div>
+    </h2>
+      <div class="socials">
+        <a href="https://eunne.tistory.com/" target="_blank">
+          <i class="fa-solid fa-t"></i></i>
+        </a>
+        <a href="https://github.com/eunne" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,119 @@
+/* Global */
+:root {
+  /* color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #f4cbc9;
+  --color-black: #141414;
+  --color-dark-gray: #4d4d4d;
+  --color-light-gray: #c4c4c4;
+  --color-mint: #8cc5d0;
+
+  /* font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* font weight */
+  --weight-bold: 700;
+  --wight-semi-bold: 600;
+  --wight-regular: 400;
+
+  /* size */
+  --size-border-raidus: 6px;
+}
+
+/* universial tag */
+* {
+  box-sizing: border-box;
+  /* 패딩을 줘도 박스 사이즈가 동일하도록 (즉, 패딩이 박스내부로 적용되도록)*/
+}
+
+/* Typography */
+/* 전역에 적용되는 재사용되는 항목들 */
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-dark-gray);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--wight-semi-bold);
+  color: var(--color-dark-gray);
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--wight-regular);
+  color: var(--color-dark-gray);
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--wight-regular);
+  color: var(--color-dark-gray);
+  margin: 4px 0px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  cursor: default; /*커서가 텍스트 위에 올라가도 마우스포인터 모양이 텍스트 입력모양으로 변하지 않도록 설정*/
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-regular);
+}
+
+.navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--wight-semi-bold);
+  margin: auto 0;
+}
+
+.navbar__logo img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  /* default: 아래쪽 모서리가 텍스크 기준선이 됨. 따라서 다른 텍스트와 수직라인을 맞추기 위해 조건을 바꿔줘야함. */
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-regular);
+}
+
+.navbar__menu__item {
+  padding: 8px 14px;
+  margin: 0px 8px;
+  cursor: pointer; /*메뉴에 커서가 올라가면 손가락으로 바뀌도록*/
+  border-radius: var(--size-border-raidus);
+}
+
+.navbar__menu__item.active {
+  border: 2px solid var(--color-pink);
+}
+
+.navbar__menu__item:hover {
+  background-color: var(--color-pink);
+}
