@@ -49,14 +49,13 @@
   </section>
 
   <!-- about me -->
-  <section id="about" class="section">
+  <section id="about" class="section section__container">
     <!-- page 공통적으로 쓰이는 것은 재사용가능하도록 -->
     <h1>About me</h1>
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
-      Excepturi deleniti dolorem maiores at natus repudiandae<br/>
-      asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
-      otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      Excepturi deleniti dolorem maiores at natus repudiandae  asperiores magnam, numquam nihil sapiente rerum eligendi.
+      otam facilis nihil nemo explicabo facere. Esse, illum.
     </p>
     <div class="about__majors">
       <!-- 또 다른 블럭이 생겼으니 about__majors__major가 아니고 major라는 별개의 박스로 만듦-->
@@ -97,56 +96,61 @@
   <!-- skills -->
   <section id="skills" class="section">
     <h1>Skills</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
-      Excepturi deleniti dolorem maiores at natus repudiandae<br/>
-      asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
-      otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
-    </p>
-    <div class="skillset__top">
-      <h2>skills</h2>
-      <div class="skill">
-        <div class="skill__description">
-          <span>HTML</span>
-          <span>99%</span>
-        </div>
-        <div class="skill__bar">
-          <div class="skill__value"></div>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill__description">
-          <span>CSS</span>
-          <span>99%</span>
-        </div>
-        <div class="skill__bar">
-          <div class="skill__value"></div>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill__description">
-          <span>JavaScript</span>
-          <span>90%</span>
-        </div>
-        <div class="skill__bar">
-          <div class="skill__value"></div>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill__description">
-          <span>React</span>
-          <span>80%</span>
-        </div>
-        <div class="skill__bar">
-          <div class="skill__value"></div>
-        </div>
-      </div>
+    <div class="section__container">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Excepturi deleniti dolorem maiores at natus repudiandae
+        asperiores magnam, numquam nihil sapiente rerum eligendi.
+        otam facilis nihil nemo explicabo facere. Esse, illum.
+      </p>
     </div>
-    <div class="skillset__bottom">
-      <h2>Tools</h2>
-      <ul class="tools">
-        <li>Figma</li>
-      </ul>
+    <div class="skillset section__container">
+      <div class="skillset__right">
+        <h2>skill</h2>
+        <div class="skill">
+          <div class="skill__description">
+            <span>HTML</span>
+            <span>99%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value" style="width: 99%"></div>
+            <!-- 각 항목별로 비율이 다르니 css가아닌 html에서 정의 -->
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill__description">
+            <span>CSS</span>
+            <span>95%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill__description">
+            <span>JavaScript</span>
+            <span>90%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill__description">
+            <span>React</span>
+            <span>80%</span>
+          </div>
+          <div class="skill__bar">
+            <div class="skill__value" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="skillset__left">
+        <h2>Tools</h2>
+        <ul class="tools">
+          <li>Figma</li>
+        </ul>
+      </div>
     </div>
   </section>
 

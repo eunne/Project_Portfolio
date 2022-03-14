@@ -28,6 +28,9 @@
   /* animation */
   --animation-duration: 300ms;
   /* 사용자가 답답함을 느끼지 않으며 재미를 느낄정도의 시간 250ms ~ 350ms */
+
+  /* boder-raius */
+  --border-raidus: 10px 10px;
 }
 
 /* universial tag */
@@ -93,7 +96,15 @@ button {
 .section {
   text-align: center;
   padding: 50px;
-  max-width: 1200px;
+  margin: auto;
+}
+
+/* 내용물이 계속 옆으로 커지지 않도록 width를 제한(텍스트가 옆으로 퍼지는 현상)
+제한을 두려는 section만 따로 적용하려고 따로 뺌.
+이 요소가 배경최대사이즈에 제한을 준거임 (skills)*/
+.section__container {
+  /* 컴퓨터에서 보기 좋은 최대 사이즈는 1200px 이지만 나는 글씨가 더 작게 나왔으면 하니 줄일거야*/
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -177,7 +188,7 @@ button {
   display: flex;
   justify-content: space-evenly;
   color: var(--color-dark-gray);
-  margin: 50px;
+  padding: 50px;
 }
 
 .major {
@@ -215,10 +226,9 @@ button {
 .job {
   display: flex;
   text-align: center;
-  justify-content: space-around;
-  padding: 50px;
-  margin: 0 100px;
+  justify-content: space-between;
   border-top: 1px solid var(--color-light-gray);
+  padding: 50px;
 }
 
 .job__logo {
@@ -233,6 +243,47 @@ button {
 }
 
 #skills {
-  background: center/cover no-repeat
-    url('imgs/background/background-gradation-top.png');
+  background: url('imgs/background/background-gradation-bottom.png')
+    center/cover no-repeat;
+}
+
+.skillset {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skillset__right {
+  background-color: var(--color-light-gray);
+  flex-basis: 70%;
+  /* 박스가 작아서 flex적용 시 너무 작게 구현됨. 이를 위해 기준을 설정해줌 */
+  margin: 20px;
+  border-radius: var(--border-raidus);
+}
+
+.skillset__left {
+  flex-basis: 30%;
+  margin: 20px;
+}
+
+.skill {
+  margin: 20px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.skill__bar {
+  background-color: var(--color-pink);
+  width: 100%;
+  height: 20px;
+  border-radius: var(--border-raidus);
+}
+
+.skill__value {
+  background-color: var(--color-dark-gray);
+  height: 20px;
+  border-radius: var(--border-raidus);
 }
