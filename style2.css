@@ -1,3 +1,38 @@
+/* Global */
+:root {
+/* color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #f4cbc9;
+  --color-black: #141414;
+  --color-dark-gray: #4d4d4d;
+  --color-light-gray: #c4c4c4; 
+  --color-mint: #8cc5d0;
+
+/* font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regualr: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+/* font weight */
+  --weight-bold: 700;
+  --wight-semi-bold: 600;
+  --wight-regular: 400;
+
+/* size */
+}
+
+/* universial tag */
+* {
+  box-sizing: border-box;
+  /* 패딩을 줘도 박스 사이즈가 동일하도록 (즉, 패딩이 박스내부로 적용되도록)*/
+}
+
+
+
 .navbar__logo img {
   width: 30px;
   height: 30px;
