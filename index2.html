@@ -40,11 +40,57 @@
   </nav>
 
   <!-- home -->
+  <!-- 무조건 div, span을 사용하는게 아니라 요소에 맞는 tag 사용 -->
   <section id="home">
     <img class="home__avatar" src="imgs/eunne.jpeg" alt="Eunne's profile photo"></img>
     <h1 class="home__title">I'm Dream maker</h1>
     <h2 class="home__description">Frontend developer and Designer</h2>
     <button class="home__contact">contact me</button>
+  </section>
+
+  <!-- about me -->
+  <section id="about">
+    <!-- page 공통적으로 쓰이는 것은 재사용가능하도록 -->
+    <h1>About me</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br/>
+      Excepturi deleniti dolorem maiores at natus repudiandae<br/>
+      asperiores magnam, numquam nihil sapiente rerum eligendi.<br/>
+      otam facilis nihil nemo explicabo facere. Esse, illum.<br/>
+    </p>
+      <div class="about__majors">
+        <!-- 또 다른 블럭이 생겼으니 about__majors__major가 아니고 major라는 별개의 박스로 만듦-->
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="major__title">HTML</div>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <div class="major__title">CSS</div>
+          <div class="major__description"></div>
+        </div>
+        <div class="major">
+          <div class="major__icon">
+            <i class="fa-brands fa-js-square"></i>
+          </div>
+          <div class="major__title">JavaScript</div>
+          <div class="major__description"></div>
+        </div>
+      </div>
+      <div class="about__jobs">
+        <div class="job">
+          <div class="job__logo">
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+          </div>
+          <div class="job__title">Finance Team</div>
+          <div class="job__description">2018.07 ~ now</div>
+        </div>
+      </div>
   </section>
 
   <!-- skills -->
