@@ -304,3 +304,123 @@ button {
   height: 20px;
   border-radius: var(--border-raidus);
 }
+
+.work__categories {
+  margin: var(--margin-20);
+  text-align: center;
+}
+
+.category__btn {
+  text-align: center;
+  color: var(--color-dark-gray);
+  font-size: var(--font-samll);
+  border: 1px solid var(--color-pink);
+  border-radius: var(--border-raidus);
+  /* 가로패딩을 넓게주면 width를 따로 줄 필요가 없구나.
+  하지만 나는 박스 사이즈를 모두 맞추고 싶으니 width를 줄래 */
+  width: 180px;
+  padding: 4px;
+  margin: 12px;
+}
+
+/* categoryBtn이 active이고 hover됐을 때 */
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-pink);
+}
+
+/* categoryCount가 active이고 btn이 hover됐을 때 안에 count만 변경*/
+.category__count.active,
+.category__btn:hover .category__count {
+  background-color: var(--color-mint);
+}
+
+/* btn이 active인 count가 btn이 hover됐을 때 안에 count만 변경*/
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.category__count {
+  margin: 4px;
+  border: 1px double var(--color-light-gray);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  /* span을 block으로 바꿈 */
+  display: inline-block;
+  /* 세로정렬맞추기 */
+  line-height: 24px;
+
+  position: relative;
+  top: -20px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+
+/* projects */
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 박스크기를 만듦 */
+.project {
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: #f4cbc9;
+  position: relative;
+}
+
+/* 담겨져있는 박스크기가 최대크기가 되도록 */
+.project__img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 위치를 어떻게 지정해야할지 모르겠어  */
+.project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-light-white);
+  background-color: var(--color-black);
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--animation-duration) ease-in;
+}
+
+/* 난 백그라운드 투명조를 조절할 생각을 했는데 위에 올라가는 이미지의 투명도를 조절하면 됨. */
+
+.project:hover .project__description {
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+.project__description h3 {
+  color: var(--color-light-white);
+}
+
+.project__description h3:after {
+  display: block;
+  content: '';
+  width: 26px;
+  height: 2px;
+  background-color: var(--color-dark-white);
+
+  /* 오른쪽으로 가 있는 바를 중앙으로 옮기는 법 */
+  position: relative;
+  left: 50%;
+  margin-left: -13px;
+  margin-top: 8px;
+}
