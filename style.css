@@ -31,6 +31,13 @@
 
   /* boder-raius */
   --border-raidus: 10px 10px;
+
+  /* margin */
+  --margin-20: 20px;
+  --margin-12: 12px;
+
+  /* padding */
+  --padding-50: 50px;
 }
 
 /* universial tag */
@@ -95,7 +102,7 @@ button {
 /* section common */
 .section {
   text-align: center;
-  padding: 50px;
+  padding: var(--padding-50);
   margin: auto;
 }
 
@@ -120,7 +127,8 @@ button {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  margin: auto 0;
+  margin: auto;
+  margin-left: var(--margin-20);
 }
 
 .navbar__logo img {
@@ -154,7 +162,7 @@ button {
 /* home */
 #home {
   background: url('imgs/background/backgroud-bottom.png') center/cover no-repeat;
-  padding: 40px;
+  padding: var(--padding-50);
   text-align: center;
   color: var(--color-dark-gray);
 }
@@ -188,7 +196,7 @@ button {
   display: flex;
   justify-content: space-evenly;
   color: var(--color-dark-gray);
-  padding: 50px;
+  padding: var(--padding-50);
 }
 
 .major {
@@ -225,10 +233,10 @@ button {
 
 .job {
   display: flex;
-  text-align: center;
   justify-content: space-between;
+  text-align: center;
   border-top: 1px solid var(--color-light-gray);
-  padding: 50px;
+  padding: var(--padding-50);
 }
 
 .job__logo {
@@ -238,8 +246,12 @@ button {
 }
 
 .job__info {
-  margin: 0 16px;
+  margin-left: var(--margin-20);
   text-align: left;
+}
+
+.job__description {
+  margin-top: var(--margin-12);
 }
 
 #skills {
@@ -250,29 +262,34 @@ button {
 .skillset {
   display: flex;
   justify-content: space-between;
+  padding: var(--padding-50);
 }
 
 .skillset__right {
   background-color: var(--color-light-gray);
   flex-basis: 70%;
   /* 박스가 작아서 flex적용 시 너무 작게 구현됨. 이를 위해 기준을 설정해줌 */
-  margin: 20px;
   border-radius: var(--border-raidus);
+  padding: 20px;
+  margin: var(--margin-12);
 }
 
 .skillset__left {
+  background-color: var(--color-light-gray);
   flex-basis: 30%;
-  margin: 20px;
+  border-radius: var(--border-raidus);
+  padding: 20px;
+  margin: var(--margin-12);
 }
 
 .skill {
-  margin: 20px;
+  padding: 20px;
+  margin: var(--margin-12);
 }
 
 .skill__description {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
 }
 
 .skill__bar {
