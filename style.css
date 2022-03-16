@@ -129,8 +129,10 @@ button {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  margin: auto;
-  margin-left: var(--margin-20);
+  margin: var(--margin-20);
+  /* margin: auto;
+  이렇게 하면 스크린 사이즈가 줄면서 로고가 중간으로 내려감
+  margin-left: var(--margin-20); */
 }
 
 .navbar__logo img {
@@ -147,7 +149,7 @@ button {
 }
 
 .navbar__menu__item {
-  padding: 8px 14px;
+  padding: 8px 10px;
   margin: 0px 8px;
   cursor: pointer; /*메뉴에 커서가 올라가면 손가락으로 바뀌도록*/
 }
@@ -159,6 +161,17 @@ button {
 .navbar__menu__item:hover {
   background-color: var(--color-mint);
   border-radius: 0 var(--size-border-raidus);
+}
+
+/* toggle btn */
+
+.navbar__toggleBtn {
+  position: absolute;
+  right: 32px;
+  top: 20px;
+  font-size: var(--font-medium);
+  color: var(--color-dark-gray);
+  display: none;
 }
 
 /* home */
@@ -193,7 +206,6 @@ button {
 }
 
 /* about me */
-
 .about__majors {
   display: flex;
   justify-content: space-evenly;
@@ -264,7 +276,7 @@ button {
 .skillset {
   display: flex;
   justify-content: space-between;
-  padding: var(--padding-50);
+  margin-top: var(--margin-20);
 }
 
 .skillset__right {
@@ -448,7 +460,7 @@ button {
 
 .testimonial__avatar {
   border-radius: 50%;
-  margin: 0 var(--margin-40);
+  margin: 0 var(--margin-20);
   width: 150px;
   height: 150px;
 }
@@ -479,4 +491,47 @@ button {
 .socials i:hover {
   transform: scale(1.1);
   color: var(--color-pink);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__toggleBtn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .about__majors,
+  .skillset {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .major {
+    margin: var(--margin-12);
+  }
+
+  .major__icon {
+    margin: auto;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 60px;
+    height: 60px;
+  }
 }
