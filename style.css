@@ -33,11 +33,13 @@
   --border-raidus: 10px 10px;
 
   /* margin */
+  --margin-40: 40px;
   --margin-20: 20px;
   --margin-12: 12px;
 
   /* padding */
   --padding-50: 50px;
+  --padding-20: 20px;
 }
 
 /* universial tag */
@@ -421,6 +423,41 @@ button {
   /* 오른쪽으로 가 있는 바를 중앙으로 옮기는 법 */
   position: relative;
   left: 50%;
-  margin-left: -13px;
+  margin-left: -13px; /*width의 절반*/
   margin-top: 8px;
+}
+
+/* testimonials */
+
+#testimonials {
+  background: url('imgs/background/background-gradation-bottom.png') no-repeat
+    center/cover;
+}
+
+.testimonial {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-20);
+}
+
+/* 똑같은 조건의 박스 중 하나만 방향을 reverse시키고 싶어 reverse라는 클래스를 추가 */
+.testimonials .reverse {
+  flex-direction: row-reverse;
+}
+
+.testimonial__avatar {
+  border-radius: 50%;
+  margin: 0 var(--margin-40);
+  width: 150px;
+  height: 150px;
+}
+
+.testimonial__description {
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-raidus);
+  background-color: var(--color-mint);
+}
+
+.testimonial__description a {
+  color: var(--color-light-white);
 }
