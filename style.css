@@ -26,8 +26,8 @@
   --size-border-raidus: 6px;
 
   /* animation */
-  --animation-duration: 300ms;
-  /* 사용자가 답답함을 느끼지 않으며 재미를 느낄정도의 시간 250ms ~ 350ms */
+  --animation-duration: 30ms;
+  /* 사용자가 답답함을 느끼지 않으며 재미를 느낄정도의 시간 25ms ~ 35ms */
 
   /* boder-raius */
   --border-raidus: 10px 10px;
@@ -367,6 +367,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: var(--padding-20);
 }
 
 /* 박스크기를 만듦 */
@@ -460,4 +461,22 @@ button {
 
 .testimonial__description a {
   color: var(--color-light-white);
+}
+
+/* contact */
+
+.contact {
+  padding: var(--padding-20);
+}
+
+.socials i {
+  font-size: var(--font-large);
+  padding: 10px;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.contacts a:hover,
+.socials i:hover {
+  transform: scale(1.1);
+  color: var(--color-pink);
 }
