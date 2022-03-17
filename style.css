@@ -26,7 +26,7 @@
   --size-border-raidus: 6px;
 
   /* animation */
-  --animation-duration: 30ms;
+  --animation-duration: 300ms;
   /* 사용자가 답답함을 느끼지 않으며 재미를 느낄정도의 시간 25ms ~ 35ms */
 
   /* boder-raius */
@@ -121,15 +121,25 @@ button {
 #navbar {
   display: flex;
   justify-content: space-between;
-  padding: var(--padding-regular);
+  position: fixed; /*navbar 상단고정*/
+  width: 100%;
+
   color: var(--color-dark-gray);
+  background-color: transparent;
+  transition: all var(--animation-duration) ease-in;
+}
+
+#navbar.fixed {
   background-color: var(--color-pink);
 }
 
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  margin: var(--margin-20);
+  display: flex;
+  align-items: center;
+  margin: 0 var(--margin-20);
+  /* margin: var(--margin-20); */
   /* margin: auto;
   이렇게 하면 스크린 사이즈가 줄면서 로고가 중간으로 내려감
   margin-left: var(--margin-20); */
@@ -138,7 +148,7 @@ button {
 .navbar__logo img {
   width: 30px;
   height: 30px;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* default: 아래쪽 모서리가 텍스크 기준선이 됨. 따라서 다른 텍스트와 수직라인을 맞추기 위해 조건을 바꿔줘야함. */
 }
 
@@ -164,7 +174,6 @@ button {
 }
 
 /* toggle btn */
-
 .navbar__toggleBtn {
   position: absolute;
   right: 32px;
@@ -180,12 +189,13 @@ button {
   padding: var(--padding-50);
   text-align: center;
   color: var(--color-dark-gray);
+  padding-top: 100px; /*navbar 자리 확보를 위해 패딩을 준다*/
 }
 
 .home__avatar {
   width: 420px;
   height: 420px;
-  border-radius: 90%;
+  border-radius: 50%;
   border: 1px solid var(--color-dark-white);
 }
 
@@ -500,6 +510,8 @@ button {
 
   #navbar {
     flex-direction: column;
+    /* screen사이즈가 줄어들 때, 로고영역 크기가 동일하게 유지되도록 */
+    line-height: 78.5px;
   }
 
   .navbar__menu {
