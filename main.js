@@ -26,25 +26,6 @@ document.addEventListener("scroll", () => {
   // }
 });
 
-
-//버튼을 누르면 해당 페이지로 이동
-const home = document.querySelector('#home');
-const about = document.querySelector('#about');
-const skillls = document.querySelector('#skills');
-const work = document.querySelector('#work');
-const tesimonials = document.querySelector('#testimonials');
-const contact = document.querySelector('#contact');
-
-home.addEventListener("click", () => {
-  const rect = home.getBoundingClientRect();
-  scrollTo(0,rect.y - navbarHeight);
-});
-
-about.addEventListener("click", () => {
-  const rect = about.getBoundingClientRect();
-  console.log(scrollTo(0,rect.y - navbarHeight));
-});
-
 //
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
@@ -57,7 +38,19 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   } else {
-    const scroll = document.querySelector(link);
-    scroll.scrollIntoView({behavior:"smooth"});
+    scrollIntoView(link);
   }
 });
+
+
+// handle click on 'contact me' btn on home 
+const contactMe = document.querySelector(".home__contact");
+contactMe.addEventListener('click', () => {
+  scrollIntoView('#contacts');
+});
+
+// scrollintoview 함수만들기
+function scrollIntoView(sector) {
+  const scrollTo = document.querySelector(sector);
+  scrollTo.scrollIntoView({behavior:"smooth"});
+};
