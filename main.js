@@ -50,7 +50,16 @@ contactMe.addEventListener('click', () => {
 });
 
 // scrollintoview 함수만들기
-function scrollIntoView(sector) {
-  const scrollTo = document.querySelector(sector);
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior:"smooth"});
 };
+
+//tranparent home when scrolling
+const homeContainer = document.querySelector('.home__container');
+const homeHeight = homeContainer.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+  //스크롤링 될 때마다 투명도가 변하도록 공식을 설정
+  homeContainer.style.opacity = (1 - window.scrollY/homeHeight);
+});

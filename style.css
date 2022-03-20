@@ -191,6 +191,8 @@ button {
   text-align: center;
   color: var(--color-dark-gray);
   padding-top: 100px; /*navbar 자리 확보를 위해 패딩을 준다*/
+
+  transition: all 1ms ease-in;
 }
 
 .home__avatar {
