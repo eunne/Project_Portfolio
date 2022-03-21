@@ -217,7 +217,6 @@ button {
 .home__contact:hover {
   background-color: var(--color-pink);
 }
-
 /* about me */
 .about__majors {
   display: flex;
@@ -504,6 +503,32 @@ button {
 .socials i:hover {
   transform: scale(1.1);
   color: var(--color-pink);
+}
+
+/* arrow btn */
+.arrowBtn.visible {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  border: 1px solid var(--color-dark-gray);
+
+  margin-left: auto;
+
+  display: flex;
+  position: sticky;
+  bottom: 20px;
+  right: 20px;
+
+  /* opacity: 0; */
+  transition: all 300ms ease-in-out;
+}
+
+.arrowBtn > i {
+  margin: auto;
+  text-align: center;
+  font-size: var(--font-medium);
+  color: var(--color-dark-gray);
 }
 
 @media screen and (max-width: 768px) {

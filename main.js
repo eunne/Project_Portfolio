@@ -55,11 +55,36 @@ function scrollIntoView(selector) {
   scrollTo.scrollIntoView({behavior:"smooth"});
 };
 
-//tranparent home when scrolling
-const homeContainer = document.querySelector('.home__container');
+//fade out home when scrolling
+const homeContainer = document.querySelector('.home__container'); //html에서 요소 불러오기
 const homeHeight = homeContainer.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
   //스크롤링 될 때마다 투명도가 변하도록 공식을 설정
-  homeContainer.style.opacity = (1 - window.scrollY/homeHeight);
+  homeContainer.style.opacity = (1 - window.scrollY/homeHeight); //css style을 바꿔주니 style이란 함수 넣기
+});
+
+//arrow btn
+const arrowBtn = document.querySelector('.arrowBtn');
+
+document.addEventListener('scroll', () => {
+
+  if( homeHeight/2 < window.scrollY ) {
+    arrowBtn.classList.add('visible');
+  } else {
+    arrowBtn.classList.remove('visible');
+  }
+
+  // if( homeHeight/2 < window.scrollY ) {
+  //   arrowBtn.style.opacity = 1;
+  // } else {
+  //   arrowBtn.style.opacity = 0;
+  // }
+})
+
+arrowBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
 });
