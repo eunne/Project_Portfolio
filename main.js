@@ -49,12 +49,6 @@ contactMe.addEventListener('click', () => {
   scrollIntoView('#contacts');
 });
 
-// scrollintoview 함수만들기
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({behavior:"smooth"});
-};
-
 //fade out home when scrolling
 const homeContainer = document.querySelector('.home__container'); //html에서 요소 불러오기
 const homeHeight = homeContainer.getBoundingClientRect().height;
@@ -68,23 +62,64 @@ document.addEventListener('scroll', () => {
 const arrowBtn = document.querySelector('.arrowBtn');
 
 document.addEventListener('scroll', () => {
-
+  
   if( homeHeight/2 < window.scrollY ) {
     arrowBtn.classList.add('visible');
   } else {
     arrowBtn.classList.remove('visible');
   }
-
+  
   // if( homeHeight/2 < window.scrollY ) {
   //   arrowBtn.style.opacity = 1;
   // } else {
   //   arrowBtn.style.opacity = 0;
   // }
-})
-
+});
+    
 arrowBtn.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   })
 });
+
+//project filtering
+const workCategories = document.querySelector('.work__categories');
+const workProjects = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workCategories.addEventListener('click', (event) => {
+  //버튼을 누르면 반환되는 각 filter값을 가져옴
+  const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  //애니메이션은 각 프로젝트를 담고있는 상자에다가 줌
+  workProjects.classList.add('anime-out');
+
+  
+  setTimeout(() => {
+    projects.forEach((project) => {
+      //각 프로젝트의 filter값을 가져옴
+      console.log(project.dataset.filter);
+      
+      if (filter === '*' || filter === project.dataset.filter) {
+        project.classList.remove('invisible')
+      } else {
+        project.classList.add('invisible')
+      }
+      
+    workProjects.classList.remove('anime-out');
+    });
+    
+  }, 300);
+});
+
+
+
+// scrollintoview 함수만들기
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior:"smooth"});
+};
