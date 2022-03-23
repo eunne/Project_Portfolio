@@ -551,6 +551,7 @@ button {
     flex-direction: column;
     /* screen사이즈가 줄어들 때, 로고영역 크기가 동일하게 유지되도록 */
     line-height: 78.5px;
+    background-color: var(--color-pink);
   }
 
   .navbar__menu {
