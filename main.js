@@ -29,11 +29,9 @@ document.addEventListener("scroll", () => {
 //
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
-
+  
   const target = event.target;
   const link = target.dataset.link;
-
-  console.log(event.target.dataset.link);
   
   if (link == null) {
     return;
@@ -94,18 +92,30 @@ workCategories.addEventListener('click', (event) => {
   if (filter == null) {
     return;
   }
-
-  //애니메이션은 각 프로젝트를 담고있는 상자에다가 줌
-  workProjects.classList.add('anime-out');
+  
+  // remove selection from the previous item and select the new
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+  console.log(event.target);
+  target.classList.add('selected');
+  
+  // const categoryBtns = document.querySelectorAll('.category__btn');
+  // categoryBtns.forEach((category) => {
+  //   filter === category.dataset.filter ? category.classList.add('selected') : category.classList.remove('selected')
+  // });
 
   
+  //애니메이션은 각 프로젝트를 담고있는 상자에다가 줌
+  workProjects.classList.add('anime-out');
   setTimeout(() => {
     projects.forEach((project) => {
       //각 프로젝트의 filter값을 가져옴
-      console.log(project.dataset.filter);
+      // console.log(project.dataset.filter);
       
       if (filter === '*' || filter === project.dataset.filter) {
-        project.classList.remove('invisible')
+        project.classList.remove('invisible');
+        
       } else {
         project.classList.add('invisible')
       }
@@ -114,6 +124,7 @@ workCategories.addEventListener('click', (event) => {
     });
     
   }, 300);
+
 });
 
 

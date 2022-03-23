@@ -165,11 +165,8 @@ button {
   cursor: pointer; /*메뉴에 커서가 올라가면 손가락으로 바뀌도록*/
 }
 
-.navbar__menu__item.active {
-  border-bottom: 2px solid var(--color-dark-gray);
-}
-
 .navbar__menu__item:hover {
+  border-bottom: 2px solid var(--color-dark-gray);
   background-color: var(--color-mint);
   border-radius: 0 var(--size-border-raidus);
 }
@@ -349,20 +346,20 @@ button {
   margin: 12px;
 }
 
-/* categoryBtn이 active이고 hover됐을 때 */
-.category__btn.active,
+/* categoryBtn이 selected이고 hover됐을 때 */
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-pink);
 }
 
 /* categoryCount가 active이고 btn이 hover됐을 때 안에 count만 변경*/
-.category__count.active,
+.category__count.selected,
 .category__btn:hover .category__count {
   background-color: var(--color-mint);
 }
 
 /* btn이 active인 count가 btn이 hover됐을 때 안에 count만 변경*/
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
