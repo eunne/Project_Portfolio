@@ -174,8 +174,8 @@ button {
 /* toggle btn */
 .navbar__toggleBtn {
   position: absolute;
-  right: 32px;
-  top: 20px;
+  right: 14px;
+  top: 8px;
   font-size: var(--font-medium);
   color: var(--color-dark-gray);
   display: none;
@@ -340,16 +340,19 @@ button {
   border: 1px solid var(--color-pink);
   border-radius: var(--border-raidus);
   /* 가로패딩을 넓게주면 width를 따로 줄 필요가 없구나.
-  하지만 나는 박스 사이즈를 모두 맞추고 싶으니 width를 줄래 */
+  하지만 나는 박스 사이즈를 모두 맞추고 싶으니 width를 줄래
+  근데 width를 줘서 그런가, 사이즈다 안 맞는거 같다? */
   width: 180px;
-  padding: 4px;
+  padding: 8px;
   margin: 12px;
+  position: relative;
 }
 
 /* categoryBtn이 selected이고 hover됐을 때 */
 .category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-pink);
+  cursor: pointer;
 }
 
 /* categoryCount가 active이고 btn이 hover됐을 때 안에 count만 변경*/
@@ -358,7 +361,7 @@ button {
   background-color: var(--color-mint);
 }
 
-/* btn이 active인 count가 btn이 hover됐을 때 안에 count만 변경*/
+/* btn이 인 count가 btn이 hover됐을 때 안에 count만 변경*/
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
@@ -376,8 +379,9 @@ button {
   /* 세로정렬맞추기 */
   line-height: 24px;
 
-  position: relative;
+  position: absolute;
   top: -20px;
+  right: 20px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -406,6 +410,7 @@ button {
   margin: 2px;
   background-color: #f4cbc9;
   position: relative;
+  border-radius: var(--border-raidus);
 }
 
 .project.invisible {
@@ -432,6 +437,7 @@ button {
   height: 100%;
   color: var(--color-light-white);
   background-color: var(--color-black);
+  border-radius: var(--border-raidus);
 
   opacity: 0;
   transform: translateY(10px);
@@ -473,6 +479,7 @@ button {
 .testimonial {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--padding-20);
 }
 
@@ -492,6 +499,7 @@ button {
   border: 1px solid var(--color-light-gray);
   border-radius: var(--border-raidus);
   background-color: var(--color-mint);
+  padding: 16px;
 }
 
 .testimonial__description a {
@@ -517,7 +525,7 @@ button {
 }
 
 /* arrow btn */
-.arrowBtn.visible {
+.arrowBtn {
   width: 50px;
   height: 50px;
   background-color: var(--color-pink);
@@ -528,11 +536,11 @@ button {
   bottom: 20px;
   right: 20px;
 
-  /* opacity: 0; */
+  opacity: 0;
   transition: all 300ms ease-in-out;
 
   /*opacity 가 0이어도 버튼은 클릭가능할 수 있기에 pointer event를 none으로 둔다.*/
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .arrowBtn > i {
@@ -543,14 +551,33 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  #home {
+    padding: 16px;
+    padding-top: 50px;
+  }
+
   .navbar__toggleBtn {
     display: block;
+    font-size: 20px;
   }
 
   #navbar {
     flex-direction: column;
     /* screen사이즈가 줄어들 때, 로고영역 크기가 동일하게 유지되도록 */
-    line-height: 78.5px;
+    line-height: 50px;
     background-color: var(--color-pink);
   }
 
@@ -560,8 +587,26 @@ button {
     text-align: center;
   }
 
-  .navbar__menu.active {
+  .navbar__menu.clicked {
     display: flex;
+  }
+
+  .navbar__menu__item {
+    padding: 0px 8px;
+  }
+
+  .home__avatar {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid var(--color-dark-white);
+    text-align: center;
+  }
+
+  .about__majors,
+  .job {
+    padding: 16px;
+    padding-top: 32px; /*이미 들어가있는 패딩과 겹쳐서 적용됨*/
   }
 
   .about__majors,
@@ -578,12 +623,30 @@ button {
     margin: auto;
   }
 
+  .work__categories {
+    margin: 18px;
+  }
+
+  .category__btn {
+    margin: 4px;
+  }
+
+  .work__projects {
+    padding: 8px;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonial,
+  .testimonials .reverse {
+    flex-direction: column;
+  }
+
   .testimonial__avatar {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    margin: 8px;
   }
 }

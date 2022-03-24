@@ -37,7 +37,7 @@ document.addEventListener("scroll", () => {
     const toggleBtn = document.querySelector(".navbar__toggleBtn");
     
     toggleBtn.addEventListener("click", () => {
-      navbarMenu.classList.toggle("active");
+      navbarMenu.classList.toggle("clicked");
     });
 
 
@@ -61,17 +61,17 @@ const arrowBtn = document.querySelector('.arrowBtn');
 
 document.addEventListener('scroll', () => {
   
-  if( homeHeight/2 < window.scrollY ) {
-    arrowBtn.classList.add('visible');
-  } else {
-    arrowBtn.classList.remove('visible');
-  }
-  
   // if( homeHeight/2 < window.scrollY ) {
-  //   arrowBtn.style.opacity = 1;
+  //   arrowBtn.classList.add('visible');
   // } else {
-  //   arrowBtn.style.opacity = 0;
+  //   arrowBtn.classList.remove('visible');
   // }
+  
+  if( homeHeight/2 < window.scrollY ) {
+    arrowBtn.style.opacity = 1;
+  } else {
+    arrowBtn.style.opacity = 0;
+  }
 });
     
 arrowBtn.addEventListener('click', () => {
@@ -94,8 +94,8 @@ workCategories.addEventListener('click', (event) => {
   }
   
   // remove selection from the previous item and select the new
-  const active = document.querySelector('.category__btn.selected');
-  active.classList.remove('selected');
+  const selected = document.querySelector('.category__btn.selected');
+  selected.classList.remove('selected');
   const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
   console.log(event.target);
   target.classList.add('selected');
